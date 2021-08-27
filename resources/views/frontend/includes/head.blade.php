@@ -27,6 +27,8 @@
 <meta property="og:title" content="{{ __('Crypto Casino') }}" />
 <meta property="og:description" content="{{ __('Casino, where you can bet and get paid in cryptocurrencies.') }}" />
 <meta property="og:image" content="{{ asset('images/og-image.jpg') }}" />
+
+<link href="<?php echo asset('assets/addchat/css/addchat.min.css') ?>" rel="stylesheet">
 <!--END Open Graph tags-->
 @includeWhen(config('settings.gtm_container_id'), 'frontend.includes.gtm-head')
 @include('frontend.includes.styles')

@@ -6,6 +6,13 @@
       0 => 'BeyondCode\\DumpServer\\DumpServerServiceProvider',
     ),
   ),
+  'classiebit/addchat-laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Classiebit\\Addchat\\AddchatServiceProvider',
+    ),
+  ),
   'fideloper/proxy' => 
   array (
     'providers' => 

@@ -161,3 +161,5 @@ Route::prefix('admin')
         Route::get('license', 'LicenseController@index')->name('license.index');
         Route::post('license', 'LicenseController@register')->name('license.register');
     });
+
+Addchat::routes();

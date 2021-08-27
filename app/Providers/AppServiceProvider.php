@@ -20,8 +20,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (config('app.force_ssl')) {
-            \URL::forceScheme('https');
+/*if ($this->app->isLocal()) {
+//if local register your services you require for development
+    $this->app->register('Barryvdh\Debugbar\ServiceProvider');
+} else {
+//else register your services you require for production
+    $this->app['request']->server->set('HTTPS', true);
+}*/
+ if (!$this->app->isLocal()) {
+        $this->app['request']->server->set('HTTPS', true);
+   }
+       if (config('app.force_ssl')) {
+            \URL::forceScheme('http');
         }
 
         // share app settings with all views
@@ -70,6 +80,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+
         // PackageManager() instance can not be bound using $this->app->singleton(),
         // because package config needs to be properly loaded first, which happens only after registering the package service provider
         $this->packageManager = new PackageManager();
